@@ -1,0 +1,354 @@
+/* Hero video */
+.hero-video {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.hero-video video {
+  position: absolute;
+  top: 0; left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-video .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-video .hero-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero-video h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+/* Ciudades */
+.ciudades {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.ciudades h2 {
+  font-size: 2.5rem;
+  color: #cc0000;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.ciudad-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.ciudad {
+  flex: 0 0 300px;
+  text-align: center;
+}
+
+.ciudad img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.ciudad h3 {
+  margin-top: 10px;
+  font-size: 1.3rem;
+}
+.hero-video {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  aspect-ratio: 16/9;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 2;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.hero-video {
+  position: relative;
+  width: 100vw;
+  height: 100vh; 
+  overflow: hidden;
+}
+
+.hero-video video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+
+.hero-banner {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.3); 
+  display: flex;
+  justify-content: center; 
+  align-items: center;   
+  z-index: 2;          
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Texto centrado */
+.hero-banner h1 {
+  color: white;
+  font-size: 3.5rem; /* tamaño mediano */
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+.ciudad {
+  width: 280px;
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+
+.img-info-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
+  border-radius: 16px;
+}
+
+.info-text {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(173, 11, 11);
+  color: white;
+  opacity: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.ciudad:hover img {
+  opacity: 0;
+}
+
+.ciudad:hover .info-text {
+  opacity: 1;
+}
+
+.info-text {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(173, 11, 11, 0.95);
+  color: white;
+  opacity: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+  border-radius: 16px;
+}
+
+.info-text h3 {
+  margin: 0 0 10px;
+  text-align: center;
+}
+.img-info-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.img-info-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
+  border-radius: 16px;
+}
+.carousel-wrapper {
+  position: relative;
+  max-width: 960px;
+  margin: 40px auto;
+}
+
+
+.carousel-container {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #f70707 transparent;
+}
+
+
+.carousel-container::-webkit-scrollbar {
+  height: 8px;
+}
+.carousel-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+.carousel-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.carousel {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  padding: 0 10px;
+}
+
+
+.ciudad:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+
+.btn-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.4);
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+.btn-arrow:hover {
+  background-color: rgba(0,0,0,0.7);
+}
+
+.btn-left {
+  left: 5px;
+}
+.btn-right {
+  right: 5px;
+}
+.mapa-y-texto {
+  display: flex;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 20px auto 40px;
+  padding: 0 20px;
+  align-items: center;
+  flex-wrap: wrap; 
+}
+
+.mapa {
+  flex: 1 1 500px;
+  min-width: 300px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.texto-mapa {
+  flex: 1 1 400px;
+  min-width: 280px;
+  font-size: 1.1rem;
+  color: #333;
+  text-align: justify;
+}
+.texto-mapa h3 {
+  font-size: 1.8rem;
+  color: #cc0000;
+  margin-bottom: 10px;
+}
+.hero-texto {
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.subtitulo-hero {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-top: 10px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
