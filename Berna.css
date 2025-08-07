@@ -1,0 +1,529 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fefefe;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
+
+.blanco {
+  color: white;
+}
+
+.rojo {
+  color: red;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+  z-index: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.menu li a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: red;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.menu li a:hover::before {
+  width: 120px;
+  height: 40px;
+}
+
+.menu li a:hover {
+  color: white;
+}
+
+.video-section {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.video-overlay h1 {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.video-overlay p {
+  font-size: 1.3rem;
+  max-width: 600px;
+}
+
+/* Actividades */
+.actividades {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.actividades-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.actividad {
+  width: 300px;
+}
+
+.actividad img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.actividad p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Info general */
+.info-general {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 50px 20px;
+  background-color: #c5c5c5d6;
+  flex-wrap: wrap;
+}
+
+.info-box {
+  background-color: white;
+  padding: 30px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.info-box h3 {
+  margin-bottom: 10px;
+}
+
+
+.hoteles {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hotel-lista {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.hotel {
+  width: 300px;
+}
+
+.hotel img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.hotel h4 {
+  margin: 10px 0 5px;
+}
+
+.hotel p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Título de actividades */
+.titulo-actividades {
+  color: red;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.carousel-comida {
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.carousel-comida h2 {
+  font-size: 2rem;
+  color: #cc0000;
+  margin-bottom: 30px;
+}
+
+.carousel-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px;
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.comida-card {
+  min-width: 240px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.comida-card:hover {
+  transform: scale(1.05);
+}
+
+.comida-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.comida-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.comida-card p {
+  padding: 0 10px 15px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.btn-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0.8;
+}
+
+.btn-arrow:hover {
+  opacity: 1;
+}
+
+.btn-arrow.left {
+  left: -20px;
+}
+
+.btn-arrow.right {
+  right: -20px;
+}
+.clima-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.widget-clima {
+  background-color: #f0efec;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 260px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.widget-clima h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.icono-temperatura {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.icono-temperatura img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.grados {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.temperatura {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.descripcion {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+.widget-clima a {
+  font-size: 0.9rem;
+  color: #b30000;
+  text-decoration: none;
+}
+
+.clima-texto {
+  max-width: 400px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+.actividades {
+  padding: 60px 20px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.actividades h1 {
+  font-size: 2.5rem;
+  color: #c80000;
+  margin-bottom: 40px;
+}
+
+.actividades-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.actividad {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  max-width: 300px;
+  width: 100%;
+}
+
+.actividad:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.actividad img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.actividad img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1) contrast(1.1);
+}
+
+.actividad p {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+.hoteles {
+  padding: 60px 20px;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.hoteles h2 {
+  font-size: 2.5rem;
+  color: #c80000;
+  margin-bottom: 40px;
+}
+
+.hotel-lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.hotel {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.hotel:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.hotel img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.hotel img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1) contrast(1.1);
+}
+
+.hotel h4 {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.hotel p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+.btn-mapa {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color: #cc0000;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-mapa:hover {
+  background-color: #a00000;
+  transform: scale(1.05);
+}
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.8); 
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+.arrow.left {
+  left: 10px;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>');
+}
+
+.arrow.right {
+  right: 10px;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>');
+}
