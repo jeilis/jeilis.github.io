@@ -273,7 +273,7 @@ body, html {
 }
 
 .tarjeta:hover {
-  transform: scale(1.05); /* o mueve ligeramente */
+  transform: scale(1.05); 
 }
 
 .card::after {
@@ -304,7 +304,7 @@ body, html {
   cursor: pointer;
 }
 
-/* Modo responsive */
+
 @media (max-width: 768px) {
   .menu {
     position: absolute;
@@ -345,16 +345,16 @@ body, html {
   width: 0;
   height: 0;
   background: red;
-  border-radius: 4px; /* esquinas ligeramente redondeadas */
+  border-radius: 4px; 
   transform: translate(-50%, -50%);
   transition: width 0.3s ease, height 0.3s ease;
   z-index: -1;
-  opacity: 0.6; /* sutil */
+  opacity: 0.6;
 }
 
 .menu li a:hover::before {
-  width: 120px;  /* tamaño pequeño rectangular */
-  height: 40px; /* más ancho que alto */
+  width: 120px;  
+  height: 40px; 
 }
 
 .menu li a:hover {
@@ -373,22 +373,208 @@ body, html {
 }
 
 .hero-text button:hover {
-  transform: scale(1.1); /* crece un 10% */
-  background-color: #a50000; /* un rojo más oscuro para efecto */
+  transform: scale(1.1); 
+  background-color: #a50000; 
 }
-.btn {
-  padding: 10px 20px;
-  background-color: #cc0000;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  display: inline-block;
-  font-weight: bold;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  cursor: pointer;
+.carrusel-contenedor {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
 }
 
-.btn:hover {
+.carrusel-experiencias {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 20px 10px;
+}
+
+.carrusel-experiencias::-webkit-scrollbar {
+  display: none; /* oculta scrollbar en navegadores WebKit */
+}
+
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.carrusel-btn.left {
+  left: 0;
+}
+
+.carrusel-btn.right {
+  right: 0;
+}
+
+.card {
+  min-width: 250px;
+  flex-shrink: 0;
+  height: 200px;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  align-items: end;
+  padding: 15px;
+  font-weight: bold;
+  background-size: cover;
+  background-position: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1) contrast(1.05);
+}
+
+.tarjeta h3 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+.tarjeta:hover h3 {
+  font-size: 30px;
   transform: scale(1.1);
-  background-color: #a50000;
+}
+html {
+  scroll-behavior: smooth;
+}
+.carrusel-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 40px; /* ajusta tamaño */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrusel-btn img {
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+
+@media (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+
+  .menu {
+    position: static;
+    flex-direction: column;
+    gap: 10px;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .menu li a {
+    font-size: 16px;
+  }
+
+  .hero {
+    height: 90vh;
+    padding: 20px;
+    background-position: center center;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-text button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .destinos {
+    padding: 30px 20px;
+  }
+
+  .destinos-header h2 {
+    font-size: 28px;
+  }
+
+  .tarjetas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tarjeta {
+    width: 90%;
+    height: 300px;
+  }
+
+  .carrusel-experiencias {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .card {
+    min-width: 80vw;
+    height: 180px;
+  }
+
+  .about-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .footer h3 {
+    font-size: 1.2rem;
+  }
+
+  .footer p {
+    font-size: 0.85rem;
+  }
 }
