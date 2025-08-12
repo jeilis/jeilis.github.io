@@ -137,6 +137,20 @@ body, html {
   display: block;
 
 }
+
+.card {
+  position: relative; 
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); 
+  z-index: 1; 
+  border-radius: 15px; 
+}
+
 .tarjeta h3 {
   position: absolute;
   bottom: 20px;
@@ -145,7 +159,6 @@ body, html {
   color: white;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
 .experiencias {
@@ -173,7 +186,7 @@ body, html {
   align-items: end;
   padding: 15px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  
 }
 
 .card.horizontal {
@@ -393,7 +406,7 @@ body, html {
 }
 
 .carrusel-experiencias::-webkit-scrollbar {
-  display: none; /* oculta scrollbar en navegadores WebKit */
+  display: none; 
 }
 
 .carrusel-btn {
@@ -430,7 +443,6 @@ body, html {
   font-weight: bold;
   background-size: cover;
   background-position: center;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
   transition: transform 0.3s ease;
 }
 
@@ -447,7 +459,6 @@ body, html {
   color: white;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
   transition: transform 0.3s ease, font-size 0.3s ease;
 }
 
@@ -463,7 +474,7 @@ html {
   border: none;
   cursor: pointer;
   padding: 0;
-  width: 40px; /* ajusta tamaño */
+  width: 40px; 
   height: 40px;
   display: flex;
   align-items: center;
@@ -577,4 +588,223 @@ html {
   .footer p {
     font-size: 0.85rem;
   }
+}
+.audio-section {
+  padding: 60px 20px;
+  background-color: #eef6f0;
+  text-align: center;
+}
+
+.audio-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #cc0000;
+}
+
+.audio-section p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.audio-section audio {
+  width: 100%;
+  max-width: 600px;
+}
+
+.audio-credit {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #555;
+}
+.chatbot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #cc0000; 
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatbot-icon::before {
+  content: "💬"; 
+  font-size: 28px;
+  color: white;
+  user-select: none;
+}
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+  .chatbot-button {
+    position: fixed;
+    right: 0;
+    bottom: 20px;
+    background: linear-gradient(180deg, #cc0000 0%, #cc0000 100%);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding: 10x 7x;
+    border-radius: 15px 0 0 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    width: 50px;
+    height: 150px;
+    justify-content: center;
+    transition: background 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease
+  }
+
+   .chatbot-button:hover {
+    background: linear-gradient(180deg, #ff4d75 0%, #c52a55 100%);
+    transform: scale(1.08); 
+  }
+
+  .chatbot-button:hover {
+    background: linear-gradient(180deg, #cc0000 0%, #cc0000 100%);
+  }
+
+  .chat-icon {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .chat-text {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  body.active {
+  background-color: #000000;
+  color: white;
+}
+
+body.active .navbar {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.active .menu li a {
+  color: white;
+}
+
+body.active .destinos {
+  background-color: #070a0f;
+}
+
+body.active .tarjeta {
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+body.active .tarjeta h3 {
+  color: #ffffff;
+}
+
+body.active .experiencias h2,
+body.active .about-text h2,
+body.active .about-text p,
+body.active .destinos-header h2,
+body.active .saber-mas {
+  color: white;
+}
+
+body.active .about {
+  background-color: #000000;
+}
+
+body.active .footer {
+  background-color: #0f0e0e;
+}
+
+body.active .card {
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+}
+#container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #ccc;
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  transition: background 0.3s ease;
+  z-index: 999;
+}
+
+.toggle {
+  background-color: white;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+#container.active {
+  background: #333;
+}
+
+#container.active .toggle {
+  transform: translateX(30px);
+}
+.audio-section p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #fff7f7; 
+}
+body.active {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.active .audio-section {
+  background-color: #1e1e1e; 
+  color: #ffffff; 
+}
+
+body.active .audio-section h2 {
+  color: #a90d0d;
+}
+
+body.active .audio-section p {
+  color: #cccccc;
+}
+
+
+.actividad,
+.comida-card,
+.hotel {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+
+body.active .actividad,
+body.active .comida-card,
+body.active .hotel {
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+}
+.audio-section p {
+  color: #222; 
+  transition: color 0.3s;
+}
+
+body.active .audio-section p {
+  color: #ffffff; 
 }
