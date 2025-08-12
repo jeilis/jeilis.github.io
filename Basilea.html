@@ -6,6 +6,20 @@
   <title>Basilea - Suiza Travel</title>
   <link rel="stylesheet" href="Basilea.css" />
   <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/041/446/747/non_2x/switzerland-national-flag-free-png.png" />
+
+  <!-- Estilos del modo claro/oscuro -->
+  <style>
+    body {
+      background-color: #f0f0f0;
+      color: #000000;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.active {
+      background-color: #121212;
+      color: #ffffff;
+    }
+  </style>
 </head>
 <body>
 
@@ -23,7 +37,6 @@
   </nav>
 </header>
 
-
 <section class="video-section">
   <video autoplay muted loop>
     <source src="https://cdn.pixabay.com/video/2017/12/18/13473-248644893_large.mp4" type="video/mp4">
@@ -33,7 +46,6 @@
     <p>La vibrante ciudad cultural y fronteriza de Suiza.</p>
   </div>
 </section>
-
 
 <section class="actividades">
   <h1>Actividades en Basilea</h1>
@@ -66,7 +78,7 @@
       </div>
 
       <div class="comida-card">
-        <img src="https://cdn.christmas-cookies.com/wp-content/uploads/2020/03/basler-leckerli.jpg"alt="Basler Leckerli">
+        <img src="https://cdn.christmas-cookies.com/wp-content/uploads/2020/03/basler-leckerli.jpg" alt="Basler Leckerli">
         <h3>Basler Leckerli</h3>
         <p>Unas galletas de especias finas, duras y glaseadas.</p>
       </div>
@@ -152,5 +164,51 @@
   </div>
 </section>
 
+<script>
+  window.onload = function () {
+    var body = document.querySelector('body');
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('active');
+    }
+  };
+</script>
+<script>
+  // Al cargar, aplicar modo oscuro si está guardado
+  window.onload = function () {
+    const body = document.body;
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('active');
+    }
+  };
+</script>
+<style>
+  /* Modo claro por defecto */
+  html,
+  body {
+    background-color: #f0f0f0;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  /* Modo oscuro */
+  body.active,
+  body.active html {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  /* Evita que las secciones queden grises o con fondo por defecto */
+  body.active section {
+    background-color: transparent;
+  }
+
+  /* Tarjetas o contenedores si necesitas oscurecerlos también */
+  body.active .actividad,
+  body.active .comida-card,
+  body.active .hotel {
+    background-color: #171717;
+    color: #ffffff;
+  }
+</style>
 </body>
 </html>
