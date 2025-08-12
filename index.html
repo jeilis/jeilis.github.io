@@ -39,6 +39,45 @@
       <button onclick="location.href='formulario.html'">PLANIFICA TU VIAJE</button>
     </div>
   </section>
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Audio Ambiente Suiza</title>
+  <link rel="stylesheet" href="audio.css" />
+</head>
+<body>
+  <section class="audio-section" id="audio">
+    <h2>Ambiente sonoro de Suiza</h2>
+    <p>Disfruta de una experiencia inmersiva con sonidos naturales grabados en los Alpes suizos.</p>
+    <audio controls>
+      <source src="https://orangefreesounds.com/wp-content/uploads/2023/03/Water-sounds-and-birds.mp3" type="audio/mpeg" />
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+  </section>
+
+  <script>
+    window.addEventListener('beforeunload', () => {
+      const audio = document.querySelector('audio');
+      if(audio) {
+        localStorage.setItem('audioTime', audio.currentTime);
+        localStorage.setItem('audioSrc', audio.src);
+      }
+    });
+
+    window.addEventListener('load', () => {
+      const audio = document.querySelector('audio');
+      const savedSrc = localStorage.getItem('audioSrc');
+      const savedTime = localStorage.getItem('audioTime');
+      if(audio && savedSrc === audio.src && savedTime) {
+        audio.currentTime = parseFloat(savedTime);
+        audio.play();
+      }
+    });
+  </script>
+</body>
+</html>
 
 
   <section class="destinos">
@@ -140,6 +179,42 @@
     });
   }
 </script>
+
+<!-- HTML -->
+<a href="#" class="chatbot-button" aria-label="Abrir ChatBot">
+  <span class="chat-icon"></span>
+  <span class="chat-text">ChatBot</span>
+</a>
+
+<div id="container">
+  <div class="toggle"></div>
+</div>
+<link rel="stylesheet" href="toggle.css" />
+
+<script>
+  var toggle = document.getElementById('container');
+  var body = document.querySelector('body');
+
+  toggle.onclick = function () {
+    toggle.classList.toggle('active');
+    body.classList.toggle('active');
+
+    if (body.classList.contains('active')) {
+      localStorage.setItem('darkMode', 'enabled');
+    } else {
+      localStorage.setItem('darkMode', 'disabled');
+    }
+  };
+
+  window.onload = function() {
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('active');
+      toggle.classList.add('active');
+    }
+  };
+</script>
+
+
 
 </body>
 </html>
