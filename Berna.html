@@ -166,7 +166,55 @@
 
   </div>
 </section>
+<script>
+  window.onload = function () {
+    var body = document.querySelector('body');
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('active');
+    }
+  };
+</script>
 
+<script>
+  
+  window.onload = function () {
+    const body = document.body;
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('active');
+    }
+  };
+</script>
+<style>
+ 
+  html,
+  body {
+    background-color: #f0f0f0;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+ 
+  body.active,
+  body.active html {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  
+  body.active section {
+    background-color: transparent;
+  }
+
+
+  body.active .actividad,
+  body.active .comida-card,
+  body.active .hotel {
+    background-color: #171717;
+    color: #ffffff;
+  }
+</style>
+</body>
+</html>
 
 </body>
 </html>
