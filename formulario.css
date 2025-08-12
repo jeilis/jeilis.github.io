@@ -120,3 +120,31 @@ button:hover {
   z-index: 10;
    backdrop-filter: blur(10px); 
 }
+
+.formulario-contenedor.dark-mode {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  border-color: #333;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.formulario-contenedor.dark-mode input,
+.formulario-contenedor.dark-mode select {
+  background-color: #222;
+  color: white;
+  border-color: #555;
+}
+
+.formulario-contenedor.dark-mode input::placeholder {
+  color: #bbb;
+}
+
+/* Y lo mismo para labels, botones, etc, si quieres */
+.formulario-contenedor.dark-mode label {
+  color: white;
+}
+
+.formulario-contenedor.dark-mode button {
+  background-color: #a92b2b;
+  color: white;
+}
