@@ -157,5 +157,52 @@
   </div>
 </section>
 
+<script>
+  window.onload = function () {
+    var body = document.querySelector('body');
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('active');
+    }
+  };
+</script>
+<script>
+  // Al cargar, aplicar modo oscuro si está guardado
+  window.onload = function () {
+    const body = document.body;
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('active');
+    }
+  };
+</script>
+<style>
+  /* Modo claro por defecto */
+  html,
+  body {
+    background-color: #f0f0f0;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  /* Modo oscuro */
+  body.active,
+  body.active html {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  /* Evita que las secciones queden grises o con fondo por defecto */
+  body.active section {
+    background-color: transparent;
+  }
+
+  /* Tarjetas o contenedores si necesitas oscurecerlos también */
+  body.active .actividad,
+  body.active .comida-card,
+  body.active .hotel {
+    background-color: #171717;
+    color: #ffffff;
+  }
+</style>
+
 </body>
 </html>
